@@ -1,0 +1,43 @@
+<form name="form" #form="ngForm" (submit)="submitContactForm(form)" autocomplete="off">
+    <input type="hidden" name="ContactId" #ContactId="ngModel" [(ngModel)]="contactService.contact.ContactId">
+    <div class="form-row mb-2">
+      <div class="col">
+        <label class="form-label">First Name:</label>
+        <input name="firstName" #firstName="ngModel" required [(ngModel)]="contactService.contact.FirstName"
+          placeholder="First Name" class="form-control">
+        <div class="text-danger" *ngIf="firstName.touched && firstName.invalid">Required</div>
+      </div>
+      <div class="col">
+        <label class="form-label">Last Name:</label>
+        <input name="lastName" #lastName="ngModel" required [(ngModel)]="contactService.contact.LastName"
+          placeholder="Last Name" class="form-control">
+        <div class="text-danger" *ngIf="lastName.touched && lastName.invalid">Required</div>
+      </div>
+    </div>
+    <div class="form-row mb-2">
+      <div class="col-md-8">
+        <label class="form-label">Email:</label>
+        <input name="emailAddress" #emailAddress="ngModel" required [(ngModel)]="contactService.contact.EmailAddress"
+          placeholder="Email Address" class="form-control">
+        <div class="text-danger" *ngIf="emailAddress.touched && emailAddress.invalid">Required</div>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Phone:</label>
+        <input name="phone" #phone="ngModel" required [(ngModel)]="contactService.contact.Phone" placeholder="Phone"
+          class="form-control">
+        <div class="text-danger" *ngIf="phone.touched && phone.invalid">Required</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 pb-2">
+        <button class="btn btn-primary w-100" type="submit" [disabled]="!form.valid">
+          <i class="fa fa-save"> Submit</i>
+        </button>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-secondary w-100" (click)="resetContactForm(form)" type="button">
+          <i class="fa fa-repeat"> Reset</i>
+        </button>
+      </div>
+    </div>
+  </form>
