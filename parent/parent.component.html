@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row mb-2 mt-4">
+        <div class="col-md-2 txt-lg">
+            Parent
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-secondary w-100" (click)="showChild('laptop')">Laptop</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-secondary w-100" (click)="showChild('car')">Car</button>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-secondary w-100" (click)="showChild('dubai')">Skyline</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col txt-lg">
+            Child
+        </div>
+        <div class="col">
+            <app-child [item]="imageToDisplay"></app-child>
+        </div>
+    </div>
+</div>
