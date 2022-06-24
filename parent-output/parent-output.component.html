@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 txt-lg">
+            Parent
+        </div>
+        <div class="col">
+            <p class="txt-lg text-secondary">
+                {{isChecked}}
+            </p>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-2 txt-lg">
+            Child
+        </div>
+        <div class="col">
+            <app-child-output (onChecked)="childCheckboxChecked($event)"></app-child-output>
+        </div>
+    </div>
+</div>
